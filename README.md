@@ -5,11 +5,65 @@ Sample output can be found on [YouTube](https://youtu.be/l-nGC-ve7sI) and [Insta
 
 ## Installation  
   
-This implementation has been teston on Python 3.6 and 3.7. As per NVLabs' TensorFlow implementation of StyleGAN2, TensorFlow 1.15 is required. TensorFlow 2.x is not supported.
+This implementation has been tested on Python 3.6 and 3.7. As per NVLabs' TensorFlow implementation of StyleGAN2, TensorFlow 1.15 is required. TensorFlow 2.x is not supported.
 
-To install, simply run: 
+### Recommended environment setup
+1. Create and activate a Python 3.6/3.7 virtual environment:
+   ```bash
+   python3.7 -m venv .venv
+   source .venv/bin/activate   # Windows (PowerShell): .venv\Scripts\Activate.ps1
+   ```
+   If you prefer `conda`, create an env instead with `conda create -n lsd python=3.7` then `conda activate lsd`.
+2. Install TensorFlow 1.15 (CPU or GPU):
+   ```bash
+   pip install "tensorflow==1.15.*"
+   # or: pip install "tensorflow-gpu==1.15.*"
+   ```
+3. Install Lucid Sonic Dreams:
+   ```bash
+   pip install lucidsonicdreams
+   ```
+4. Verify the environment in Python to confirm the versions match expectations:
+   ```bash
+   python - <<'PY'
+   import sys
+   import tensorflow as tf
+   print(f"Python: {sys.version.split()[0]}")
+   print(f"TensorFlow: {tf.__version__}")
+   PY
+   ```
+   You should see a Python 3.6/3.7 interpreter and TensorFlow 1.15.x before proceeding to generation.
 
-```pip install lucidsonicdreams```
+### Copy-paste setup scripts
+If you just want to run the exact commands end-to-end, use one of these snippets.
+
+**macOS/Linux (bash/zsh):**
+```bash
+python3.7 -m venv .venv
+source .venv/bin/activate
+pip install "tensorflow==1.15.*"
+pip install lucidsonicdreams
+python - <<'PY'
+import sys
+import tensorflow as tf
+print(f"Python: {sys.version.split()[0]}")
+print(f"TensorFlow: {tf.__version__}")
+PY
+```
+
+**Windows (PowerShell):**
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install "tensorflow==1.15.*"
+pip install lucidsonicdreams
+python - <<'PY'
+import sys
+import tensorflow as tf
+print(f"Python: {sys.version.split()[0]}")
+print(f"TensorFlow: {tf.__version__}")
+PY
+```
 
 ## Usage
 
