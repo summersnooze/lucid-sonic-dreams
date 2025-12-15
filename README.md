@@ -24,5 +24,19 @@ from lucidsonicdreams import LucidSonicDream
 L = LucidSonicDream(song = 'song.mp3',
                     style = 'abstract photos')
 
-L.hallucinate(file_name = 'song.mp4') 
+L.hallucinate(file_name = 'song.mp4')
 ```
+
+### Command-line helper
+
+If you prefer not to write Python yourself, you can create a video straight
+from the command line with the bundled helper script:
+
+```
+python examples/make_video.py --song path/to/song.mp3 --output my_video.mp4 \
+    --style "abstract photos" --duration 20 --fps 43 --resolution 512
+```
+
+The script exposes common parameters such as style, resolution, duration, and
+frame rate while delegating the heavy lifting to `LucidSonicDream` under the
+hood. Run `python examples/make_video.py --help` to see all available flags.
